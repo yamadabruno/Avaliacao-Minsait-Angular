@@ -1,1 +1,31 @@
-<p>editar-produtos works!</p>
+<h1 class="mt-5 mb-5">Editar Produto</h1>
+<form [formGroup]="editarProdutoForm" (submit)="editar()" >
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label for="codigoBarras" class="form-label">Código de Barras</label>
+                    <input type="text" class="form-control" id="codigoBarras"formControlName="codigoBarras">
+                    <div *ngIf="editarProdutoForm.get('codigoBarras')?.errors"> Digite no mínimo 5 digitos</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" formControlName="nome">
+                    <div *ngIf="editarProdutoForm.get('nome')?.errors">Digite no mínimo 5 digitos</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="preco" class="form-label">Preço</label>
+                    <input type="number" class="form-control" id="preco" formControlName="preco">
+                    <div *ngIf="editarProdutoForm.get('preco')?.errors">Digite no mínimo 1 digitos</div>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-secondary mt-3 mb-5 me-1" routerLink="/produtos">Voltar</a>
+        <button class="btn btn-success mt-3 mb-5 " [disabled]="editarProdutoForm.invalid">Salvar alterações</button>
+    </div>
+</form>
+

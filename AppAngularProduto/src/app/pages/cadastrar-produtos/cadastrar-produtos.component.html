@@ -1,1 +1,34 @@
-<p>cadastrar-produtos works!</p>
+<h1 class="mt-5 mb-5">Cadastrar Produto</h1>
+<form [formGroup]="produtoForm" (submit)="cadastrar()">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="mb-3">
+                    <label for="codigoBarras" class="form-label">Código de Barras</label>
+                    <input type="text" class="form-control" id="codigoBarras" formControlName="codigoBarras">
+                    <div *ngIf="produtoForm.get('codigoBarras')?.errors?.['required'] && produtoForm.get('codigoBarras')?.touched">Código de Barras obrigatório</div>
+                    <div *ngIf="produtoForm.get('codigoBarras')?.errors">Digite no mínimo 5 digitos</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" formControlName="nome">
+                    <div *ngIf="produtoForm.get('nome')?.errors?.['required'] && produtoForm.get('nome')?.touched">Campo obrigatório</div>
+                    <div *ngIf="produtoForm.get('nome')?.errors">Digite no mínimo 5 caracteres</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="preco" class="form-label">Preço</label>
+                    <input type="number" class="form-control" id="preco" formControlName="preco">
+                    <div *ngIf="produtoForm.get('preco')?.errors?.['required'] && produtoForm.get('preco')?.touched">Campo obrigatório</div>
+                    <div *ngIf="produtoForm.get('preco')?.errors">Digite no mínimo 1 caracteres</div>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-secondary mt-3 mb-5 me-1" routerLink="/produtos">Voltar</a>
+        <button class="btn btn-success mt-3 mb-5" type="submit" [disabled]="produtoForm.invalid">Cadastrar</button>
+    </div>
+</form>
+
