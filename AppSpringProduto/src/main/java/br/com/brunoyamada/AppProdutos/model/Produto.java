@@ -25,21 +25,12 @@ public class Produto {
 	private Long id;
 	
 	@Column(nullable = false, unique = true)
-	@NotNull(message = "Campo obrigatório")
-	@NotBlank(message = "Campo não pode ser vazio")
-	@Length(min = 5, max = 20, message = "Campo não pode conter menos que 5 e mais de 20 caracteres")
 	private String codigoBarras;
 	
 	@Column(nullable = false)
-	@NotNull(message = "Nome obrigatório")
-	@NotBlank(message = "Nome não pode ser vazio")
-	@Length(min = 5, max = 100, message = "Nome não pode conter menos que 5 e mais de 100 caracteres")
 	private String nome;
 	
 	@Column(nullable = false)
-	@NotNull(message = "Preço de produto obrigatório")
-	@Max(value = 10, message = "Preço não pode ser maior que 10")
-	@Min(value = 1, message = "Preço não pode ser menor que 1")
 	private BigDecimal preco;
 	
 	public Produto() {}
