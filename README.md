@@ -10,7 +10,7 @@ Spring initializr (Project: Maven, Language: Java, Spring Boot: 3.0.12, Packagin
 
 - Java JDK 17;
 - Maven 3.9.5;
-- MySQL 8 Workbench;
+- MySQL 8;
 - Postman;
 
 ### Front-end
