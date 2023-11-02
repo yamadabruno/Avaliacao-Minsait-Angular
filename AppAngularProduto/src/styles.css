@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+.content-body {
+    min-height: 65vh;
+    padding: 3% 0;
+}
+.ngx-charts-outer {
+    margin: auto;
+}
